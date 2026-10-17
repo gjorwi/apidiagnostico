@@ -67,7 +67,7 @@ function padreDeNodo(nodo) {
   return null;
 }
 
-// Convierte el arreglo de docs/codes.json en documentos listos para Mongo:
+// Convierte el arreglo de data/codes.json en documentos listos para Mongo:
 // normaliza códigos y descripciones, resuelve el padre y cuenta los hijos.
 export function construirNodosCie10(datos) {
   const nodos = datos.map((nodo) => {

@@ -1,0 +1,32 @@
+# Blueprint de Render para la API.
+# La base de datos es MongoDB Atlas (variable MONGO_URI); Render no ofrece MongoDB.
+services:
+  - type: web
+    name: diagnosticos-api
+    runtime: node
+    plan: free
+    region: ohio
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: USE_MEMORY_DB
+        value: "false"
+      - key: COOKIES_SEGURAS
+        value: "true"
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: WEB_ORIGINS
+        sync: false
+      - key: ADMIN_EMAIL
+        value: admin@diagnosticos.local
+      - key: ADMIN_PASSWORD
+        sync: false

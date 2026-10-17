@@ -29,7 +29,7 @@ async function escribirEnLotes(documentos) {
   }
 }
 
-// Importa el catálogo jerárquico oficial (docs/codes.json): normaliza códigos,
+// Importa el catálogo jerárquico oficial (data/codes.json): normaliza códigos,
 // descripciones con defectos y reconstruye la estructura padre/hijos.
 export async function importarCie10DesdeJson(buffer) {
   let datos;

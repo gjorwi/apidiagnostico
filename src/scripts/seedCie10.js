@@ -5,7 +5,7 @@ import { conectarDB, desconectarDB } from '../config/db.js';
 import { importarCie10DesdeBuffer } from '../services/cie10Import.js';
 import { sembrarCie10Demo } from '../services/cie10Demo.js';
 
-const RAIZ_REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../..');
+const RAIZ_REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
 async function existe(ruta) {
   try {
@@ -61,7 +61,7 @@ async function ejecutar() {
       `Catálogo demo: ${resultado.insertados} insertados, ${resultado.actualizados} actualizados (${resultado.total} códigos).`
     );
     console.log(
-      'Para importar el catálogo oficial desde cero: npm run seed:cie10 -- docs/codes.json --limpiar'
+      'Para importar el catálogo oficial desde cero: npm run seed:cie10:oficial'
     );
   }
 

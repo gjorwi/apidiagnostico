@@ -9,11 +9,12 @@
     "test": "vitest run",
     "seed:admin": "node src/scripts/seedAdmin.js",
     "seed:cie10": "node src/scripts/seedCie10.js",
+    "seed:cie10:oficial": "node src/scripts/seedCie10.js data/codes.json --limpiar",
     "cie10:auditar": "node src/scripts/auditarCie10.js",
     "seed:demo": "node src/scripts/seedDemo.js"
   },
   "dependencies": {
-    "@diag/shared": "*",
+    "@diag/shared": "file:./shared",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -35,5 +36,8 @@
     "mongodb-memory-server": "^10.1.4",
     "supertest": "^7.0.0",
     "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

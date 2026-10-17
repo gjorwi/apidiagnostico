@@ -3,10 +3,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { auditarCie10 } from '../services/cie10Catalogo.js';
 
-const RAIZ_REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../..');
+const RAIZ_REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
 async function ejecutar() {
-  const argumento = process.argv[2] || 'docs/codes.json';
+  const argumento = process.argv[2] || 'data/codes.json';
   const ruta = path.isAbsolute(argumento) ? argumento : path.resolve(RAIZ_REPO, argumento);
   const datos = JSON.parse(await readFile(ruta, 'utf8'));
   const reporte = auditarCie10(datos);
