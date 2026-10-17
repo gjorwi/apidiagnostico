@@ -11,10 +11,14 @@ const aLista = (valor) =>
     .map((elemento) => elemento.trim())
     .filter(Boolean);
 
+const MONGO_URI_POR_DEFECTO = 'mongodb://127.0.0.1:27017/diagnosticos';
+
 export const env = {
   nodeEnv: process.env.NODE_ENV || 'development',
   port: Number(process.env.PORT || 4000),
-  mongoUri: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/diagnosticos',
+  // Acepta MONGO_URI o MONGODB_URI (alias habitual en plataformas como Render).
+  mongoUri: process.env.MONGO_URI || process.env.MONGODB_URI || MONGO_URI_POR_DEFECTO,
+  mongoDbName: process.env.MONGO_DB_NAME || '',
   useMemoryDb: aBooleano(process.env.USE_MEMORY_DB),
   seedDemo: aBooleano(process.env.SEED_DEMO, true),
   jwtSecret: process.env.JWT_SECRET || 'secreto-acceso-desarrollo-cambiar',
