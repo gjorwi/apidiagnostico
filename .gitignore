@@ -1,0 +1,28 @@
+# Dependencias
+node_modules/
+
+# Build
+dist/
+build/
+
+# Pruebas y cobertura
+coverage/
+
+# Variables de entorno (se conserva .env.example)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Binarios de MongoDB en memoria
+.mongodb-binaries/
+
+# Sistema
+.DS_Store
+Thumbs.db
